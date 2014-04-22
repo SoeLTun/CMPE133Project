@@ -1,41 +1,50 @@
 <?php session_start(); ?>
 <html>
 <head>
+<title>Edit Profile</title>
+<link rel="stylesheet" type="text/css" href="style_editprofile.css">
 </head>
-<body>
-<h1>Edit Profile</h1>
+<body style=" background-color: lightgray;">
+<h1 class="editprofile"><img class="small-logo" src="sjsu6.png" style="width: 88px; height: 88px; float:left; 
+background-color:gray; margin-left:30px;margin-bottom:10px; ">Mentor Web</h1>
 <br>
-<form method="post" action="changePassword.php">
-Old Password: <input type="password" name="oldpassword"><br>
-New Password: <input type="password" name="newpassword"><br>
-Repeat New Password: <input type="password" name="repeatnewpassword"><br>
-<input type="submit" value="Submit" name="passwordsubmit">
+<form >
+<h2 class="editprofile1"style="  blue; font-size: 20pt;font-style: italic;
+	 font-family: cursive;font-weight: bold; margin-left:550px;}"> Edit Profile</h2>
+<div class="editprofile">
+
+<form class="editprofile" method="post" action="changePassword.php">
+<p class="editprofile">
+Old Password: <input class="editprofile1" type="password" name="oldpassword" style="margin-left:36px;"><br><br>
+New Password: <input class="editprofile1" type="password" name="newpassword" style="margin-left:32px;"><br><br>
+Re-enter Password: <input class="editprofile1"  type="password" name="repeatnewpassword">
+<input class="editprofile" type="submit" value="Submit" name="passwordsubmit" ></p><br>
 </form>
 
 <?php
 $paid = false; //remove this line, change next to if ($_SESSION['paid'] == false)
 if (!$paid) {
-    echo '<p>Would you like to become a premium member and remove all limits on mentors and mentees?</p>';
-    echo '<form action="subscribe.php"><input type="submit" value="Subscribe"></form>'; 
+    echo '<p class ="editprofile">Would you like to become a premium member<br> and remove all limits on mentors and mentees?</p>';
+    echo '<form action="subscribe.php"><input class="editprofile" type="submit" value="Subscribe"style="margin-left:300px;" ></form>'; 
 } else { // change to else if ($_SESSION['paid'] == true)
     $creditCardLastFourDigits = 1111; //change to grab credit card info
-    echo '<p>Credit Card: ************'.$creditCardLastFourDigits.'</p>';
-    echo '<input type="button" onlick="changeCreditCard.php" value="Change">';
+    echo '<p class ="editprofile">Credit Card: ************'.$creditCardLastFourDigits.'</p>';
+    echo '<input class ="editprofile" type="button" onlick="changeCreditCard.php" value="Change">';
 }
 ?>
 
-<p>Email: 
+<p class="editprofile">Email: 
 <?php 
 $email = 'someemail@email.com';
 echo $email;
 ?>
 </p>
-<form method="post" action="changeEmail.php">
-New email: <input type="text" name="email">
-<input type="submit" value="Submit" name="submit">
+<form class="editprofile" method="post" action="changeEmail.php">
+New email: <input class="editprofile1" type="text" name="email"style="margin-left:36px;">
+<input class="editprofile" type="submit" value="Submit" name="submit">
 </form>
 
-<p>Interests:</p><br>
+<p class="editprofile">Interests:</p><br>
 <?php
 //some php code to get current interests into an array
 //for each intetersts in array
@@ -43,39 +52,39 @@ New email: <input type="text" name="email">
 //    echo '<input type="button" onclick="deleteInterest($interest)" value="Delete" />
 ?>
 
-<p>Job Description:
+<p class="editprofile">Job Description:
 <?php
 $jobDescription = 'myjob';
 // set job description
 echo $jobDescription;
 ?>
 </p>
-<form method="post" action="changeJobDescription.php">
-New Job Description: <input type="text" name="jobdescription">
-<input type="submit" value="Submit" name="submit">
+<form class="editprofile" method="post" action="changeJobDescription.php">
+New Job Description: <input class="editprofile1" type="text" name="jobdescription">
+<input class="editprofile" type="submit" value="Submit" name="submit">
 </form>
 
-<p>SkypeID: 
+<p class="editprofile">SkypeID: 
 <?php
 $skypeid = 'myskypeid';
 // set $skypeid to get skypeID
 echo $skypeid;
 ?>
 </p>
-<form method="post" action="changeSkypeID.php">
-New Skype ID: <input type="text" name="newskypeid">
-<input type="submit" value="Submit" name="submit">
+<form class="editprofile" method="post" action="changeSkypeID.php">
+New Skype ID: <input class="editprofile1" type="text" name="newskypeid"style="margin-left:36px;">
+<input class="editprofile" type="submit" value="Submit" name="submit">
 </form>
 
-<p>My Mentees:</p>
+<p class="editprofile">My Mentees:</p>
 <!-- 
 list mentees with buttons to remove from both parties and inform 
-<input type="button" onclick="deleteMentorOrMentee.php" value="Delete">
+<input class="editprofile" type="button" onclick="deleteMentorOrMentee.php" value="Delete">
 -->
-<p>My Mentors:</p>
+<p class="editprofile">My Mentors:</p>
 <!-- 
 list mentees with buttons to remove from both parties and inform 
-use button after each <input type="button" onclick="deleteMentorOrMentee.php" value="Delete">
+use button after each <input class="editprofile" type="button" onclick="deleteMentorOrMentee.php" value="Delete">
 -->
 
 <?php
@@ -86,8 +95,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 function deleteInterest($interest) {
     echo 'interest deleted!';
-    header('Refresh: 3; URL=http://localhost/editProfile.php');
+    header('Refresh: 3; URL=http://localhost/index.php');
 }
 ?>
+</div><br>
+</form>
+<br><br><br>
 </body>
 </html>
