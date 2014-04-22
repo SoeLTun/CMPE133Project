@@ -15,17 +15,17 @@ background-color:gray; margin-left:30px;margin-bottom:10px; ">Mentor Web</h1>
 
 <form class="editprofile" method="post" action="changePassword.php">
 <p class="editprofile">
-Old Password: <input class="editprofile1" type="password" name="oldpassword" style="margin-left:36px;"><br><br>
-New Password: <input class="editprofile1" type="password" name="newpassword" style="margin-left:32px;"><br><br>
-Re-enter Password: <input class="editprofile1"  type="password" name="repeatnewpassword">
+Old Password:<br> <input class="editprofile1" type="password" name="oldpassword" ><br><br>
+New Password: <br><input class="editprofile1" type="password" name="newpassword" ><br><br>
+Re-enter Password:<br> <input class="editprofile1"  type="password" name="repeatnewpassword">
 <input class="editprofile" type="submit" value="Submit" name="passwordsubmit" ></p><br>
 </form>
 
 <?php
 $paid = false; //remove this line, change next to if ($_SESSION['paid'] == false)
 if (!$paid) {
-    echo '<p class ="editprofile">Would you like to become a premium member<br> and remove all limits on mentors and mentees?</p>';
-    echo '<form action="subscribe.php"><input class="editprofile" type="submit" value="Subscribe"style="margin-left:300px;" ></form>'; 
+    echo '<p class ="editprofile">Would you like to become a premium member<br> and remove all limits on mentors and mentees?';
+    echo '<form action="subscribe.php"><input class="editprofile" type="submit" value="Subscribe"style="margin-left:402px;" ></p></form>'; 
 } else { // change to else if ($_SESSION['paid'] == true)
     $creditCardLastFourDigits = 1111; //change to grab credit card info
     echo '<p class ="editprofile">Credit Card: ************'.$creditCardLastFourDigits.'</p>';
@@ -40,7 +40,7 @@ echo $email;
 ?>
 </p>
 <form class="editprofile" method="post" action="changeEmail.php">
-New email: <input class="editprofile1" type="text" name="email"style="margin-left:36px;">
+New email: <br><input class="editprofile1" type="text" name="email">
 <input class="editprofile" type="submit" value="Submit" name="submit">
 </form>
 
@@ -60,7 +60,7 @@ echo $jobDescription;
 ?>
 </p>
 <form class="editprofile" method="post" action="changeJobDescription.php">
-New Job Description: <input class="editprofile1" type="text" name="jobdescription">
+New Job Description:<br> <input class="editprofile1" type="text" name="jobdescription">
 <input class="editprofile" type="submit" value="Submit" name="submit">
 </form>
 
@@ -72,7 +72,7 @@ echo $skypeid;
 ?>
 </p>
 <form class="editprofile" method="post" action="changeSkypeID.php">
-New Skype ID: <input class="editprofile1" type="text" name="newskypeid"style="margin-left:36px;">
+New Skype ID: <br><input class="editprofile1" type="text" name="newskypeid">
 <input class="editprofile" type="submit" value="Submit" name="submit">
 </form>
 
@@ -100,6 +100,6 @@ function deleteInterest($interest) {
 ?>
 </div><br>
 </form>
-<br><br><br>
+<br><br>
 </body>
 </html>
