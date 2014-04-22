@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+h1.editprofile {background:gray; text-align:center; font-size: 45pt; margin-top:10px; padding-top:20px;
+	 font-weight: bold; color: blue; font-style: italic; font-family: fantasy,sans-serif;
+	 text-shadow: aqua;}
+	 input.editprofile{width: 100px; height: 30px; font-size: 12pt; font-weight: bold;font-family:cursive; 
+	 border-style: double;background-color: white; font-style: italic;}
+	 input.editprofile1{width: 300px; height:35px; font-size:12pt; font-weight:; border-style:ridge;}
+	input.editprofile2{width: 100px; height: 30px; font-size: 12pt; font-weight: bold;font-family:cursive; 
+	 border-style: double;background-color: white;}
+	 p.editprofile{margin-left:65px;}
+	 form.editprofile{margin-left:65px;}
+	 div.editprofile{font-size:13pt; font-weight:bold; border-style:outset; width:57%; margin-left:300px; 
+	 background-color: silver;}
+	 form.editprofile1{ border-bottom-style: dashed; border-color: blue; font-size: 18pt;font-style: italic;
+	 font-family: cursive;font-weight: bold;}
